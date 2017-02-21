@@ -1,5 +1,6 @@
 package com.nabenik.heaven;
 
+import com.nabenik.heaven.controller.MovieDAO;
 import com.nabenik.heaven.fblocks.FunctionalController;
 import com.nabenik.heaven.fblocks.StreamController;
 
@@ -15,6 +16,9 @@ public class Main {
 		// Second demo - Streams
 		StreamController streamController = new StreamController();
 		streamController.doDemo();
+		
+		MovieDAO movieController = new MovieDAO();
+		movieController.doConnection();
 
 	}
 
