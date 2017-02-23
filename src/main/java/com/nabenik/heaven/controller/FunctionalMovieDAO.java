@@ -18,9 +18,9 @@ import com.nabenik.heaven.rest.MovieDTO;
 import javaslang.collection.List;
 import javaslang.control.Try;
 
-public class MovieDAO {
+public class FunctionalMovieDAO {
 	String userName = "postgres";
-	String password = "informatica";
+	String password = "<yourpassword>";
 	String url = "jdbc:postgresql://localhost:5432/movies";
 
 	/**

@@ -94,7 +94,7 @@
 						<driver>org.postgresql.Driver</driver>
 						<url>jdbc:postgresql:movies</url>
 						<user>postgres</user>
-						<password>informatica</password>
+						<password><!-- your password --></password>
 					</jdbc>
 
 					<generator>
