@@ -1,8 +1,12 @@
 package com.nabenik.heaven;
 
+
 import com.nabenik.heaven.controller.MovieDAO;
-import com.nabenik.heaven.fblocks.FunctionalController;
-import com.nabenik.heaven.fblocks.StreamController;
+import com.nabenik.heaven.rblocks.FunctionalController;
+import com.nabenik.heaven.rblocks.StreamController;
+import com.nabenik.heaven.rest.MovieDTO;
+
+import javaslang.collection.List;
 
 public class Main {
 	
@@ -17,8 +21,14 @@ public class Main {
 		StreamController streamController = new StreamController();
 		streamController.doDemo();
 		
+		// Third demo - Improved streams demo
+		com.nabenik.heaven.lblocks.StreamController impStreamController =
+				new com.nabenik.heaven.lblocks.StreamController();
+		impStreamController.doDemo();
+		
 		MovieDAO movieController = new MovieDAO();
-		movieController.doConnection();
+		List<MovieDTO> movies = movieController.retrieveNewCenturyMovies();
+		movies.forEach(System.out::println);
 
 	}
 

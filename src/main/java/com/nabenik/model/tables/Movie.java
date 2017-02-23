@@ -34,7 +34,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Movie extends TableImpl<MovieRecord> {
 
-    private static final long serialVersionUID = -1979235671;
+    private static final long serialVersionUID = 1383688475;
 
     /**
      * The reference instance of <code>public.movie</code>
@@ -55,34 +55,69 @@ public class Movie extends TableImpl<MovieRecord> {
     public final TableField<MovieRecord, Long> MOVIE_ID = createField("movie_id", org.jooq.impl.SQLDataType.BIGINT.nullable(false), this, "");
 
     /**
-     * The column <code>public.movie.title</code>.
+     * The column <code>public.movie.director_name</code>.
      */
-    public final TableField<MovieRecord, String> TITLE = createField("title", org.jooq.impl.SQLDataType.VARCHAR.length(250).nullable(false), this, "");
+    public final TableField<MovieRecord, String> DIRECTOR_NAME = createField("director_name", org.jooq.impl.SQLDataType.VARCHAR.length(250).defaultValue(org.jooq.impl.DSL.field("''::character varying", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
-     * The column <code>public.movie.release_year</code>.
+     * The column <code>public.movie.duration</code>.
      */
-    public final TableField<MovieRecord, Integer> RELEASE_YEAR = createField("release_year", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
+    public final TableField<MovieRecord, Integer> DURATION = createField("duration", org.jooq.impl.SQLDataType.INTEGER.defaultValue(org.jooq.impl.DSL.field("0", org.jooq.impl.SQLDataType.INTEGER)), this, "");
 
     /**
-     * The column <code>public.movie.price</code>.
+     * The column <code>public.movie.gross</code>.
      */
-    public final TableField<MovieRecord, Byte> PRICE = createField("price", org.jooq.impl.SQLDataType.TINYINT.nullable(false), this, "");
+    public final TableField<MovieRecord, Integer> GROSS = createField("gross", org.jooq.impl.SQLDataType.INTEGER.defaultValue(org.jooq.impl.DSL.field("0", org.jooq.impl.SQLDataType.INTEGER)), this, "");
 
     /**
-     * The column <code>public.movie.description</code>.
+     * The column <code>public.movie.genres</code>.
      */
-    public final TableField<MovieRecord, String> DESCRIPTION = createField("description", org.jooq.impl.SQLDataType.VARCHAR.length(2500).nullable(false), this, "");
+    public final TableField<MovieRecord, String> GENRES = createField("genres", org.jooq.impl.SQLDataType.VARCHAR.length(250).defaultValue(org.jooq.impl.DSL.field("''::character varying", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
-     * The column <code>public.movie.imdb_id</code>.
+     * The column <code>public.movie.movie_title</code>.
      */
-    public final TableField<MovieRecord, String> IMDB_ID = createField("imdb_id", org.jooq.impl.SQLDataType.VARCHAR.length(50).nullable(false), this, "");
+    public final TableField<MovieRecord, String> MOVIE_TITLE = createField("movie_title", org.jooq.impl.SQLDataType.VARCHAR.length(150).defaultValue(org.jooq.impl.DSL.field("''::character varying", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
-     * The column <code>public.movie.poster_url</code>.
+     * The column <code>public.movie.plot_keywords</code>.
      */
-    public final TableField<MovieRecord, String> POSTER_URL = createField("poster_url", org.jooq.impl.SQLDataType.VARCHAR.length(250).nullable(false), this, "");
+    public final TableField<MovieRecord, String> PLOT_KEYWORDS = createField("plot_keywords", org.jooq.impl.SQLDataType.VARCHAR.length(250).defaultValue(org.jooq.impl.DSL.field("''::character varying", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+
+    /**
+     * The column <code>public.movie.movie_imdb_link</code>.
+     */
+    public final TableField<MovieRecord, String> MOVIE_IMDB_LINK = createField("movie_imdb_link", org.jooq.impl.SQLDataType.VARCHAR.length(250).defaultValue(org.jooq.impl.DSL.field("''::character varying", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+
+    /**
+     * The column <code>public.movie.country</code>.
+     */
+    public final TableField<MovieRecord, String> COUNTRY = createField("country", org.jooq.impl.SQLDataType.VARCHAR.length(50).defaultValue(org.jooq.impl.DSL.field("''::character varying", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+
+    /**
+     * The column <code>public.movie.content_rating</code>.
+     */
+    public final TableField<MovieRecord, String> CONTENT_RATING = createField("content_rating", org.jooq.impl.SQLDataType.VARCHAR.length(50).defaultValue(org.jooq.impl.DSL.field("''::character varying", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+
+    /**
+     * The column <code>public.movie.budget</code>.
+     */
+    public final TableField<MovieRecord, Long> BUDGET = createField("budget", org.jooq.impl.SQLDataType.BIGINT.defaultValue(org.jooq.impl.DSL.field("0", org.jooq.impl.SQLDataType.BIGINT)), this, "");
+
+    /**
+     * The column <code>public.movie.title_year</code>.
+     */
+    public final TableField<MovieRecord, Integer> TITLE_YEAR = createField("title_year", org.jooq.impl.SQLDataType.INTEGER.defaultValue(org.jooq.impl.DSL.field("1900", org.jooq.impl.SQLDataType.INTEGER)), this, "");
+
+    /**
+     * The column <code>public.movie.imdb_score</code>.
+     */
+    public final TableField<MovieRecord, Double> IMDB_SCORE = createField("imdb_score", org.jooq.impl.SQLDataType.DOUBLE.defaultValue(org.jooq.impl.DSL.field("0", org.jooq.impl.SQLDataType.DOUBLE)), this, "");
+
+    /**
+     * The column <code>public.movie.movie_facebook_likes</code>.
+     */
+    public final TableField<MovieRecord, Long> MOVIE_FACEBOOK_LIKES = createField("movie_facebook_likes", org.jooq.impl.SQLDataType.BIGINT.defaultValue(org.jooq.impl.DSL.field("0", org.jooq.impl.SQLDataType.BIGINT)), this, "");
 
     /**
      * Create a <code>public.movie</code> table reference

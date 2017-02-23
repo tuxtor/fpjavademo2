@@ -1,4 +1,4 @@
-package com.nabenik.heaven.fblocks;
+package com.nabenik.heaven.rblocks;
 
 public class FunctionalController {
 	

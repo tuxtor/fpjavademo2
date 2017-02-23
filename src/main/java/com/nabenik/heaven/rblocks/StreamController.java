@@ -1,4 +1,4 @@
-package com.nabenik.heaven.fblocks;
+package com.nabenik.heaven.rblocks;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -19,7 +19,7 @@ public class StreamController {
     
     public void oldSort(){
         List<Integer> unsortedList = generateRandomList();
-        System.out.println("Old way");
+        System.out.println("Old way sorting");
         System.out.println(unsortedList);
         Collections.sort(unsortedList, new Comparator<Integer>() {
             @Override
@@ -32,7 +32,7 @@ public class StreamController {
     
     public void lambdaSort(){
         List<Integer> theList = generateRandomList();
-        System.out.println("Lambda way");
+        System.out.println("Lambda way sorting");
         System.out.println(theList);
         theList.sort((x,y) -> x.compareTo(y));
         System.out.println(theList);
@@ -40,7 +40,7 @@ public class StreamController {
     
     public void oldFilter(){
         List<Integer> unfilteredList = generateRandomList();
-        System.out.println("Old way");
+        System.out.println("Old way filtering");
         List<Integer> filteredList = new ArrayList<>();
         for (Integer number : unfilteredList) {
             if(number > 50){
@@ -51,7 +51,7 @@ public class StreamController {
     }
     
     public void lambdaFilter(){
-        System.out.println("Lambda way");
+        System.out.println("Lambda way filtering");
         List<Integer> unfilteredList = generateRandomList();
         List<Integer> filteredList = unfilteredList.stream()
         		.map(x -> x-1)
